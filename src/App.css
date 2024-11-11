@@ -47,7 +47,7 @@ body {
   top: -10px;
   left: 10px;
   font-size: 0.5em;
-  background-color: #FAF0EB;
+  background-color: #fff4f1;
   padding: 0 5px;
   color: #7A52D1;
   text-transform: uppercase;
@@ -62,4 +62,8 @@ body {
   background-color: #7A52D1;
   vertical-align: middle;
   margin-left: 10px;
+}
+
+.btn-round {
+  border-radius: 20px;
 }

@@ -92,9 +92,10 @@ const Booking: React.FC = () => {
     />
   </div>
 
-  <div className="input-field">
+  <div>
     <span className="input-label">Number of People</span>
     <input
+      className='input-field'
       type="number"
       name="people"
       value={bookingData.people}
@@ -113,7 +114,7 @@ const Booking: React.FC = () => {
               required
               placeholder="Shoe Size"
             />
-            <button type="button" onClick={() => removeShoeSizeField(index)}>Remove</button>
+            <button className="btn-round" type="button" onClick={() => removeShoeSizeField(index)}>-</button>
           </div>
         ))}
         <button type="button" onClick={addShoeSizeField}>Add Shoe Size</button>
