@@ -27,6 +27,7 @@ const Confirmation: React.FC = () => {
       <p><strong>Number of People:</strong> {bookingData.people}</p>
       <p><strong>Shoe Sizes:</strong> {bookingData.shoes.join(', ')}</p>
       <p><strong>Total Price:</strong> {bookingData.price} SEK</p>
+      <button onClick={() => navigate('/booking')}>SWEET, LET'S GO!</button>
     </div>
   );
 };
