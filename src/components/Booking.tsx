@@ -1,6 +1,5 @@
-// src/components/Booking.tsx
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { BookingRequest, BookingResponse } from '../types';
 
 const Booking: React.FC = () => {
@@ -10,7 +9,7 @@ const Booking: React.FC = () => {
     people: 1,
     shoes: [],
   });
-  const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
+  const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -31,27 +30,36 @@ const Booking: React.FC = () => {
   const addShoeSizeField = () => {
     setBookingData((prevData) => ({
       ...prevData,
-      shoes: [...prevData.shoes, 0],
+      shoes: [...prevData.shoes, 0], // Lägg till ett nytt skostorleksfält med standardvärde 0
     }));
   };
 
   const removeShoeSizeField = (index: number) => {
     setBookingData((prevData) => ({
       ...prevData,
-      shoes: prevData.shoes.filter((_, i) => i !== index),
+      shoes: prevData.shoes.filter((_, i) => i !== index), // Ta bort skostorlek vid angivet index
     }));
   };
 
   const handleBookingSubmit = async () => {
     try {
-      const response = await axios.post<BookingResponse>(
-        'https://h5jbtjv6if.execute-api.eu-north-1.amazonaws.com',
-        bookingData,
-        {
-          headers: { 'x-api-key': '738c6b9d-24cf-47c3-b688-f4f4c5747662' },
-        }
-      );
-      setConfirmation(response.data);
+        const response = await fetch('/api', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': '738c6b9d-24cf-47c3-b688-f4f4c5747662'
+            },
+            body: JSON.stringify(bookingData)
+          });
+          
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data: BookingResponse = await response.json();
+      console.log("Booking response:", data);
+      navigate('/confirmation', { state: data });
     } catch (error) {
       console.error("Error booking:", error);
     }
@@ -104,6 +112,7 @@ const Booking: React.FC = () => {
               value={size}
               onChange={(e) => handleShoeSizeChange(index, parseInt(e.target.value))}
               required
+              placeholder="Shoe Size"
             />
             <button type="button" onClick={() => removeShoeSizeField(index)}>Remove</button>
           </div>
@@ -112,14 +121,6 @@ const Booking: React.FC = () => {
 
         <button type="submit">Submit Booking</button>
       </form>
-
-      {confirmation && (
-        <div>
-          <h3>Booking Confirmation</h3>
-          <p>Booking ID: {confirmation.id}</p>
-          <p>Total Price: {confirmation.price} SEK</p>
-        </div>
-      )}
     </div>
   );
 };
