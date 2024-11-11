@@ -67,7 +67,7 @@ const Booking: React.FC = () => {
 
   return (
     <div>
-      <h2>Book Your Bowling Lane</h2>
+      <h2>WHEN, WHAT & WHO</h2>
       <form onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
         <label>
           Date & Time:
