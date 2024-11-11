@@ -68,43 +68,42 @@ const Booking: React.FC = () => {
   return (
     <div>
       <h2>WHEN, WHAT & WHO</h2>
-      <form onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
-        <label>
-          Date & Time:
-          <input
-            type="datetime-local"
-            name="when"
-            value={bookingData.when}
-            onChange={handleChange}
-            required
-          />
-        </label>
+      <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
+  <div className="input-field">
+    <span className="input-label">Date & Time</span>
+    <input
+      type="datetime-local"
+      name="when"
+      value={bookingData.when}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-        <label>
-          Number of Lanes:
-          <input
-            type="number"
-            name="lanes"
-            value={bookingData.lanes}
-            onChange={handleChange}
-            min="1"
-            required
-          />
-        </label>
+  <div className="input-field">
+    <span className="input-label">Number of Lanes</span>
+    <input
+      type="number"
+      name="lanes"
+      value={bookingData.lanes}
+      onChange={handleChange}
+      min="1"
+      required
+    />
+  </div>
 
-        <label>
-          Number of People:
-          <input
-            type="number"
-            name="people"
-            value={bookingData.people}
-            onChange={handleChange}
-            min="1"
-            required
-          />
-        </label>
-
-        <h3>Shoe Sizes</h3>
+  <div className="input-field">
+    <span className="input-label">Number of People</span>
+    <input
+      type="number"
+      name="people"
+      value={bookingData.people}
+      onChange={handleChange}
+      min="1"
+      required
+    />
+  </div>
+        <h3>Shoes</h3>
         {bookingData.shoes.map((size, index) => (
           <div key={index}>
             <input
@@ -121,7 +120,8 @@ const Booking: React.FC = () => {
 
         <button type="submit">Submit Booking</button>
       </form>
-    </div>
+      </div>
+    
   );
 };
 
