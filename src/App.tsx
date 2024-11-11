@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Booking from './components/Booking';
 import Confirmation from './components/Confirmation';
 import Menu from './components/Menu';
+import './App.css';
 
 const App: React.FC = () => {
   return (
