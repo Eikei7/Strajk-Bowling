@@ -90,14 +90,15 @@ h3 {
 /* Container för formuläret */
 .form-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   max-width: 400px;
   margin: 0 auto;
 }
 
 input {
-  /* padding: 10px; */
+  width: 150px;
   background-color: #fff4f1;
   border: none;
   border-radius: 5px;
@@ -105,9 +106,8 @@ input {
   color: #222;
   font-family: 'Work Sans', sans-serif;
 }
-
-input:active, input:focus {
-  border: 1px solid #F45B69;
+.input-no {
+  width: 40px;
 }
 
 .input-field {
@@ -115,6 +115,17 @@ input:active, input:focus {
   text-align: left;
   padding: 10px;
   width: 340px;
+  height: 25px;
+  border: 1px solid #7A52D1;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #3B3B3B;
+}
+.input-field-date, .input-field-time {
+  position: relative;
+  text-align: left;
+  padding: 10px;
+  width: 150px;
   height: 20px;
   border: 1px solid #7A52D1;
   border-radius: 5px;
@@ -122,33 +133,24 @@ input:active, input:focus {
   color: #3B3B3B;
 }
 
-.input-date-time {
-  border-color: #F45B69;
-  color: #F45B69;
-  width: 100px;
-}
-
 .input-label {
   position: absolute;
-  top: -10px;
+  top: -8px;
   left: 10px;
   font-size: 0.5em;
+  font-weight: bold;
   background-color: #fff4f1;
   padding: 0 5px;
   color: #7A52D1;
   text-transform: uppercase;
 }
 
-.input-label::after {
-  content: "";
-  display: inline-block;
-  width: 100px;
-  height: 1px;
-  background-color: #7A52D1;
-  vertical-align: middle;
-  margin-left: 10px;
+.btn-round {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
-.btn-round {
-  border-radius: 20px;
+.plusbutton {
+    width: 300px;
 }

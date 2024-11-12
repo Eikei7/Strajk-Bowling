@@ -72,7 +72,7 @@ const Booking: React.FC = () => {
     <div>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
-      <div className='input-field'>
+      <div className='input-field-date'>
         <span className="input-label">Date</span>
         <input
           type="date"
@@ -83,7 +83,7 @@ const Booking: React.FC = () => {
         />
       </div>
 
-      <div className='input-field'>
+      <div className='input-field-time'>
         <span className="input-label">Time</span>
         <input
           type="time"
@@ -97,6 +97,7 @@ const Booking: React.FC = () => {
   <div className='input-field'>
     <span className="input-label">Number of Awesome bowlers</span>
     <input
+      className='input-no'
       type="number"
       name="people"
       value={bookingData.people}
@@ -106,16 +107,19 @@ const Booking: React.FC = () => {
     />
   </div>
   <div className="input-field">
-    <span className="input-label">Number of Lanes</span>
-    <input
-      type="number"
-      name="lanes"
-      value={bookingData.lanes}
-      onChange={handleChange}
-      min="1"
-      required
-    />
-  </div>
+  <span className="input-label">Number of Lanes</span>
+  <input
+    className='input-no'
+    type="number"
+    name="lanes"
+    value={bookingData.lanes}
+    onChange={handleChange}
+    min="1"
+    required
+  />
+  <span className="input-unit">{bookingData.lanes > 1 ? "lanes" : "lane"}</span>
+</div>
+
         <h2>Shoes</h2>
         {bookingData.shoes.map((size, index) => (
           <div key={index}>
@@ -126,7 +130,9 @@ const Booking: React.FC = () => {
               required
               placeholder="Shoe Size"
             />
+            <div className='plusbutton'>
             <button className="btn-round" type="button" onClick={() => removeShoeSizeField(index)}>-</button>
+            </div>
           </div>
         ))}
         <button className="btn-round" type="button" onClick={addShoeSizeField}>+</button>
