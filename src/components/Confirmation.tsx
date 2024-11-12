@@ -20,8 +20,10 @@ const Confirmation: React.FC = () => {
 
   return (
     <div>
-      <h2>Booking Confirmation</h2>
-      <p><strong>Booking ID:</strong> {bookingData.id}</p>
+      <img src="logo.svg" alt="Confirmation" width="70px" />
+      <h1 className="header-confirmation">See you soon!</h1>
+      <h2>Booking Details</h2>
+      <p><strong>Booking number:</strong> {bookingData.id}</p>
       <p><strong>Date & Time:</strong> {bookingData.when}</p>
       <p><strong>Number of Lanes:</strong> {bookingData.lanes}</p>
       <p><strong>Number of People:</strong> {bookingData.people}</p>

@@ -43,6 +43,13 @@ h1 {
   font-family: 'Bebas Neue', cursive;
   color: #EC315A;
 }
+.header-confirmation {
+  font-size: 4em;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Bebas Neue', cursive;
+  color: #EC315A;
+}
 
 h2 {
   font-size: 1.5em;
@@ -50,6 +57,24 @@ h2 {
   margin: 0;
   font-family: 'Bebas Neue', cursive;
   color: #340D6D;
+}
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background-color: #7A52D1;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+h2::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background-color: #7A52D1;
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
 h3 {
