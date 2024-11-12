@@ -72,7 +72,7 @@ const Booking: React.FC = () => {
     <div>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
-  <div className="input-date-time">
+      <div className='input-field'>
         <span className="input-label">Date</span>
         <input
           type="date"
@@ -83,7 +83,7 @@ const Booking: React.FC = () => {
         />
       </div>
 
-      <div className="input-date-time">
+      <div className='input-field'>
         <span className="input-label">Time</span>
         <input
           type="time"
@@ -94,10 +94,9 @@ const Booking: React.FC = () => {
         />
       </div>
 
-  <div>
-    <span className="input-label">Number of People</span>
+  <div className='input-field'>
+    <span className="input-label">Number of Awesome bowlers</span>
     <input
-      className='input-field'
       type="number"
       name="people"
       value={bookingData.people}

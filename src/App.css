@@ -97,21 +97,27 @@ h3 {
 }
 
 input {
-  padding: 10px;
-  border: 1px solid #7A52D1;
+  /* padding: 10px; */
+  background-color: #fff4f1;
+  border: none;
   border-radius: 5px;
   font-size: 1.2em;
   color: #222;
   font-family: 'Work Sans', sans-serif;
 }
 
+input:active, input:focus {
+  border: 1px solid #F45B69;
+}
+
 .input-field {
   position: relative;
-  padding: 15px;
+  text-align: left;
+  padding: 10px;
   width: 340px;
   height: 20px;
   border: 1px solid #7A52D1;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.2em;
   color: #3B3B3B;
 }
@@ -133,7 +139,6 @@ input {
   text-transform: uppercase;
 }
 
-/* Tunn linje till höger om etiketten */
 .input-label::after {
   content: "";
   display: inline-block;
