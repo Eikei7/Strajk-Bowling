@@ -72,17 +72,7 @@ const Booking: React.FC = () => {
     <div>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
-  {/* <div className="input-field">
-    <span className="input-label">Date</span>
-    <input
-      type="date"
-      name="when"
-      value={bookingData.when}
-      onChange={handleChange}
-      required
-    />
-  </div> */}
-  <div className="input-field">
+  <div className="input-date-time">
         <span className="input-label">Date</span>
         <input
           type="date"
@@ -93,7 +83,7 @@ const Booking: React.FC = () => {
         />
       </div>
 
-      <div className="input-field">
+      <div className="input-date-time">
         <span className="input-label">Time</span>
         <input
           type="time"
@@ -104,18 +94,6 @@ const Booking: React.FC = () => {
         />
       </div>
 
-  <div className="input-field">
-    <span className="input-label">Number of Lanes</span>
-    <input
-      type="number"
-      name="lanes"
-      value={bookingData.lanes}
-      onChange={handleChange}
-      min="1"
-      required
-    />
-  </div>
-
   <div>
     <span className="input-label">Number of People</span>
     <input
@@ -123,6 +101,17 @@ const Booking: React.FC = () => {
       type="number"
       name="people"
       value={bookingData.people}
+      onChange={handleChange}
+      min="1"
+      required
+    />
+  </div>
+  <div className="input-field">
+    <span className="input-label">Number of Lanes</span>
+    <input
+      type="number"
+      name="lanes"
+      value={bookingData.lanes}
       onChange={handleChange}
       min="1"
       required

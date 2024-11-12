@@ -19,6 +19,7 @@ body {
   width: 400px;
   height: 850px;
   margin: 0 auto;
+  border: 2px solid #7A52D1;
 }
 
 .home-container {
@@ -91,27 +92,36 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-/* Stil för varje inputfält */
+input {
+  padding: 10px;
+  border: 1px solid #7A52D1;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #222;
+  font-family: 'Work Sans', sans-serif;
+}
+
 .input-field {
   position: relative;
   padding: 15px;
+  width: 340px;
+  height: 20px;
   border: 1px solid #7A52D1;
   border-radius: 10px;
   font-size: 1.2em;
   color: #3B3B3B;
 }
 
-/* Röd färg på tidfältet */
-.input-time {
+.input-date-time {
   border-color: #F45B69;
   color: #F45B69;
+  width: 100px;
 }
 
-/* Stil för etiketterna */
 .input-label {
   position: absolute;
   top: -10px;
