@@ -69,7 +69,9 @@ const Booking: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='booking-container'>
+      <img src="logo.svg" alt="Logo" width="70px" />
+      <h1 className="header-confirmation">Booking</h1>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
       <div className='input-field-date'>
