@@ -9,6 +9,8 @@ const Booking: React.FC = () => {
     people: 1,
     shoes: [],
   });
+  const [date, setDate] = useState(''); // För separat datumfält
+  const [time, setTime] = useState(''); // För separat tidsfält
   const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,13 +44,15 @@ const Booking: React.FC = () => {
   };
 
   const handleBookingSubmit = async () => {
+    const when = `${date}T${time}`;
+    const updatedBookingData = { ...bookingData, when };
     try {
         const response = await fetch('/api', {
             method: 'POST',
             headers: {
               'x-api-key': '738c6b9d-24cf-47c3-b688-f4f4c5747662'
             },
-            body: JSON.stringify(bookingData)
+            body: JSON.stringify(updatedBookingData)
           });
           
 
@@ -68,7 +72,7 @@ const Booking: React.FC = () => {
     <div>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
-  <div className="input-field">
+  {/* <div className="input-field">
     <span className="input-label">Date</span>
     <input
       type="date"
@@ -77,7 +81,28 @@ const Booking: React.FC = () => {
       onChange={handleChange}
       required
     />
-  </div>
+  </div> */}
+  <div className="input-field">
+        <span className="input-label">Date</span>
+        <input
+          type="date"
+          name="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+      </div>
+
+      <div className="input-field">
+        <span className="input-label">Time</span>
+        <input
+          type="time"
+          name="time"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+          required
+        />
+      </div>
 
   <div className="input-field">
     <span className="input-label">Number of Lanes</span>
