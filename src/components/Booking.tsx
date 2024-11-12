@@ -107,6 +107,7 @@ const Booking: React.FC = () => {
       min="1"
       required
     />
+    <span className="input-unit">{bookingData.people > 1 ? "people" : "person"}</span>
   </div>
   <div className="input-field">
   <span className="input-label">Number of Lanes</span>
@@ -122,24 +123,30 @@ const Booking: React.FC = () => {
   <span className="input-unit">{bookingData.lanes > 1 ? "lanes" : "lane"}</span>
 </div>
 
-        <h2>Shoes</h2>
-        {bookingData.shoes.map((size, index) => (
-          <div key={index}>
-            <input
-              type="number"
-              value={size}
-              onChange={(e) => handleShoeSizeChange(index, parseInt(e.target.value))}
-              required
-              placeholder="Shoe Size"
-            />
-            <div className='plusbutton'>
-            <button className="btn-round" type="button" onClick={() => removeShoeSizeField(index)}>-</button>
-            </div>
-          </div>
-        ))}
-        <button className="btn-round" type="button" onClick={addShoeSizeField}>+</button>
+<h2>Shoes</h2>
+{bookingData.shoes.map((size, index) => (
+  <div className="input-field-shoes" key={index}>
+    <input
+      type="number"
+      value={size}
+      onChange={(e) => handleShoeSizeChange(index, parseInt(e.target.value))}
+      min="30"
+      required
+      placeholder="Shoe Size"
+    />
+    <button
+      className="btn-round"
+      type="button"
+      onClick={() => removeShoeSizeField(index)}
+      aria-label={`Remove shoe size ${size}`}
+    >
+      -
+    </button>
+  </div>
+))}
+<button className="btn-round" type="button" onClick={addShoeSizeField} aria-label="Add shoe size">+</button>
 
-        <button type="submit">STRIIIIIIKE</button>
+<button type="submit">STRIIIIIIKE</button>
       </form>
       </div>
     
