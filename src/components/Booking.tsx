@@ -46,7 +46,6 @@ const Booking: React.FC = () => {
         const response = await fetch('/api', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
               'x-api-key': '738c6b9d-24cf-47c3-b688-f4f4c5747662'
             },
             body: JSON.stringify(bookingData)
@@ -67,12 +66,12 @@ const Booking: React.FC = () => {
 
   return (
     <div>
-      <h2>WHEN, WHAT & WHO</h2>
+      <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
       <form className="form-container" onSubmit={(e) => { e.preventDefault(); handleBookingSubmit(); }}>
   <div className="input-field">
-    <span className="input-label">Date & Time</span>
+    <span className="input-label">Date</span>
     <input
-      type="datetime-local"
+      type="date"
       name="when"
       value={bookingData.when}
       onChange={handleChange}
@@ -104,7 +103,7 @@ const Booking: React.FC = () => {
       required
     />
   </div>
-        <h3>Shoes</h3>
+        <h2>Shoes</h2>
         {bookingData.shoes.map((size, index) => (
           <div key={index}>
             <input
@@ -117,9 +116,9 @@ const Booking: React.FC = () => {
             <button className="btn-round" type="button" onClick={() => removeShoeSizeField(index)}>-</button>
           </div>
         ))}
-        <button type="button" onClick={addShoeSizeField}>Add Shoe Size</button>
+        <button className="btn-round" type="button" onClick={addShoeSizeField}>+</button>
 
-        <button type="submit">Submit Booking</button>
+        <button type="submit">STRIIIIIIKE</button>
       </form>
       </div>
     

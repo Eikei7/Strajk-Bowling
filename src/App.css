@@ -10,7 +10,6 @@
   margin: 0 auto;
   text-align: center;
   background-color: #fff4f1;
-  border: 2px solid #7A52D1;
 
 }
 
@@ -31,7 +30,6 @@ body {
   width: 400px;
   text-align: center;
   cursor: pointer;
-  /* border: 2px solid #7A52D1; */
 }
 
 .logo {
@@ -44,6 +42,14 @@ h1 {
   margin: 0;
   font-family: 'Bebas Neue', cursive;
   color: #EC315A;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Bebas Neue', cursive;
+  color: #340D6D;
 }
 
 h3 {
