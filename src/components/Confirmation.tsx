@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BookingResponse } from '../types';
+import Menu from './Menu';
 
 const Confirmation: React.FC = () => {
   const location = useLocation();
@@ -10,7 +11,8 @@ const Confirmation: React.FC = () => {
 
   if (!bookingData) {
     return (
-      <div>
+      <div className='confirmation-container'>
+        <Menu />
         <h2>No booking found</h2>
         <p>It looks like you haven't made a booking. Go back to the booking page to start again.</p>
         <button onClick={() => navigate('/booking')}>Back to Booking</button>
@@ -19,7 +21,8 @@ const Confirmation: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className='confirmation-container'>
+      <Menu />
       <img src="logo.svg" alt="Confirmation" width="70px" />
       <h1 className="header-confirmation">See you soon!</h1>
       <h2>Booking Details</h2>
