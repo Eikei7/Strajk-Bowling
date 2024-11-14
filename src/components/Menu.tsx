@@ -42,7 +42,7 @@ const Menu: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       {/* Logo som öppnar sidomenyn */}
       <button className="hamburger" onClick={toggleMenu}>
       <span className="line"></span>
@@ -66,7 +66,7 @@ const Menu: React.FC = () => {
           </li>
         </ul>
       </motion.div>
-    </div>
+    </>
   );
 };
 

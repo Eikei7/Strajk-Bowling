@@ -14,7 +14,7 @@ const Confirmation: React.FC = () => {
       <div className='confirmation-container'>
         <Menu />
         <img src="logo.svg" alt="Confirmation" width="70px" />
-        <h2 className='when-what-who'>No booking found</h2>
+        <h1 className='header-confirmation'>No booking found</h1>
         <p className='nobooking'>What the Sigma? It looks like you haven't made a booking, mate. Go back to the booking page to start again.</p>
         <button className="btn-strike" onClick={() => navigate('/booking')}>Back to Booking</button>
       </div>
@@ -26,14 +26,27 @@ const Confirmation: React.FC = () => {
       <Menu />
       <img src="logo.svg" alt="Confirmation" width="70px" />
       <h1 className="header-confirmation">See you soon!</h1>
-      <h2>Booking Details</h2>
-      <p><strong>Booking number:</strong> {bookingData.id}</p>
-      <p><strong>Date & Time:</strong> {bookingData.when}</p>
-      <p><strong>Number of Lanes:</strong> {bookingData.lanes}</p>
-      <p><strong>Number of People:</strong> {bookingData.people}</p>
-      <p><strong>Shoe Sizes:</strong> {bookingData.shoes.join(', ')}</p>
-      <p><strong>Total Price:</strong> {bookingData.price} SEK</p>
-      <button onClick={() => navigate('/booking')}>SWEET, LET'S GO!</button>
+      <h2 className='booking-details'>Booking Details</h2>
+      <div className='input-field'>
+      <div className='input-label'>When</div>
+      <p>{bookingData.when.replace("T", ", ")}</p>
+      </div>
+      <div className='input-field'>
+      <div className='input-label'>Who</div>
+      <p> {bookingData.people}</p>
+      </div>
+      <div className='input-field'>
+      <div className='input-label'>Lanes</div>
+      <p> {bookingData.lanes}</p>
+      </div>
+      <div className='input-field'>
+        <div className='input-label'>Booking number</div>
+      <p>{bookingData.id}</p>
+      </div>
+      <div className='input-total'>     
+      <p><strong>Total:</strong> {bookingData.price} sek</p>
+      </div>
+      <button className="btn-strike" onClick={() => navigate('/booking')}>Sweet, let's go!</button>
     </div>
   );
 };

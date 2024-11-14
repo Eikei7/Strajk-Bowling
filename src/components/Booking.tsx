@@ -125,29 +125,33 @@ const Booking: React.FC = () => {
   <span className="input-unit">{bookingData.lanes > 1 ? "lanes" : "lane"}</span>
 </div>
 
-<h2 className='shoes'>Shoes</h2>
+<h2 className="shoes">Shoes</h2>
 {bookingData.shoes.map((size, index) => (
+  <div className='shoe-container'>
   <div className="input-field-shoes" key={index}>
+    <span className="input-label">Shoe size / Person {index + 1}</span>
     <input
       type="number"
       value={size}
       onChange={(e) => handleShoeSizeChange(index, parseInt(e.target.value))}
-      min="30"
+      min="25"
       required
       placeholder="Shoe Size"
     />
+  </div>
+  <div>
     <button
-      className="btn-round"
+      className="btn-minus"
       type="button"
       onClick={() => removeShoeSizeField(index)}
       aria-label={`Remove shoe size ${size}`}
-    >
-      -
-    </button>
+    >-</button>
   </div>
-))}
-<button className="btn-round" type="button" onClick={addShoeSizeField} aria-label="Add shoe size">+</button>
-
+</div>))
+}
+<div>
+<button className="btn-plus" type="button" onClick={addShoeSizeField} aria-label="Add shoe size">+</button>
+</div>
 <button className="btn-strike" type="submit">Striiiiike! </button>
       </form>
       </div>
