@@ -77,7 +77,7 @@ h1 {
   color: #EC315A;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 400;
   margin-bottom: 20px;
   font-family: 'Bebas Neue', cursive;
@@ -89,7 +89,7 @@ h2 {
 .when-what-who::before {
   content: "";
   display: inline-block;
-  width: 100px;
+  width: 90px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
@@ -98,7 +98,7 @@ h2 {
 .when-what-who::after {
   content: "";
   display: inline-block;
-  width: 100px;
+  width: 90px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
@@ -121,7 +121,7 @@ h2 {
 .shoes::before {
   content: "";
   display: inline-block;
-  width: 150px;
+  width: 140px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
@@ -130,7 +130,7 @@ h2 {
 .shoes::after {
   content: "";
   display: inline-block;
-  width: 150px;
+  width: 140px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
