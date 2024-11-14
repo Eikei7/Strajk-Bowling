@@ -13,9 +13,10 @@ const Confirmation: React.FC = () => {
     return (
       <div className='confirmation-container'>
         <Menu />
-        <h2>No booking found</h2>
-        <p>It looks like you haven't made a booking. Go back to the booking page to start again.</p>
-        <button onClick={() => navigate('/booking')}>Back to Booking</button>
+        <img src="logo.svg" alt="Confirmation" width="70px" />
+        <h2 className='when-what-who'>No booking found</h2>
+        <p className='nobooking'>What the Sigma? It looks like you haven't made a booking, mate. Go back to the booking page to start again.</p>
+        <button className="btn-strike" onClick={() => navigate('/booking')}>Back to Booking</button>
       </div>
     );
   }

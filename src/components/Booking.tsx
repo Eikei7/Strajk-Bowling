@@ -125,7 +125,7 @@ const Booking: React.FC = () => {
   <span className="input-unit">{bookingData.lanes > 1 ? "lanes" : "lane"}</span>
 </div>
 
-<h2>Shoes</h2>
+<h2 className='shoes'>Shoes</h2>
 {bookingData.shoes.map((size, index) => (
   <div className="input-field-shoes" key={index}>
     <input
@@ -148,7 +148,7 @@ const Booking: React.FC = () => {
 ))}
 <button className="btn-round" type="button" onClick={addShoeSizeField} aria-label="Add shoe size">+</button>
 
-<button type="submit">STRIIIIIIKE</button>
+<button className="btn-strike" type="submit">Striiiiike! </button>
       </form>
       </div>
     

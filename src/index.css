@@ -37,13 +37,11 @@ button {
   font-size: 1.5em;
   font-weight: 500;
   font-family: inherit;
+  text-transform: uppercase;
   background-color: #EC315A;
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;
-}
-button:hover {
-  border-color: #646cff;
 }
 button:focus,
 button:focus-visible {

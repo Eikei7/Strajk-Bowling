@@ -7,12 +7,11 @@
   align-items: center;
   width: 400px;
   height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   margin: 0 auto;
   text-align: center;
   background-color: #fff4f1;
-
 }
 
 body {
@@ -21,7 +20,6 @@ body {
   width: 400px;
   height: 850px;
   margin: 0 auto;
-  /* border: 2px solid #7A52D1; */
 }
 
 .home-container {
@@ -42,8 +40,10 @@ body {
   height: 850px;
   width: 400px;
   text-align: center;
-  margin-top: 20px;
   position: relative;
+}
+.booking-container > img, .confirmation-container > img {
+  margin-top: 30px;
 }
 .confirmation-container {
   display: flex;
@@ -53,7 +53,6 @@ body {
   height: 850px;
   width: 400px;
   text-align: center;
-  margin-top: 20px;
   position: relative;
 }
 
@@ -61,7 +60,11 @@ body {
   width: 150px;
   margin-bottom: 20px;
 }
-
+.nobooking {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2em;
+  padding: 20px;
+}
 h1 {
   font-size: 6em;
   margin: 0;
@@ -75,7 +78,6 @@ h1 {
   font-family: 'Bebas Neue', cursive;
   color: #EC315A;
 }
-
 h2 {
   font-size: 1.5em;
   font-weight: 400;
@@ -83,7 +85,10 @@ h2 {
   font-family: 'Bebas Neue', cursive;
   color: #340D6D;
 }
-h2::before {
+.when-what-who {
+  width: 400px;
+}
+.when-what-who::before {
   content: "";
   display: inline-block;
   width: 100px;
@@ -92,7 +97,7 @@ h2::before {
   vertical-align: middle;
   margin-right: 10px;
 }
-h2::after {
+.when-what-who::after {
   content: "";
   display: inline-block;
   width: 100px;
@@ -101,7 +106,27 @@ h2::after {
   vertical-align: middle;
   margin-left: 10px;
 }
-
+.shoes {
+  width: 400px;
+}
+.shoes::before {
+  content: "";
+  display: inline-block;
+  width: 150px;
+  height: 1px;
+  background-color: #7A52D1;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.shoes::after {
+  content: "";
+  display: inline-block;
+  width: 150px;
+  height: 1px;
+  background-color: #7A52D1;
+  vertical-align: middle;
+  margin-left: 10px;
+}
 h3 {
   font-size: 1.5em;
   font-weight: 400;
@@ -111,7 +136,6 @@ h3 {
   color: #340D6D;
 }
 
-/* Container för formuläret */
 .form-container {
   display: flex;
   justify-content: center;
@@ -197,6 +221,15 @@ input {
   align-items: center;
   justify-content: center;
 }
+.btn-strike {
+  width: 350px;
+  height: 68px;
+  font-family: 'Work sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-top: 25px;
+}
 /* Stilar för hamburger-knappen */
 .hamburger {
   position: absolute;
@@ -233,23 +266,28 @@ input {
   width: 50%; /* Kortast */
 }
 
-/* Stilar för menyn när den är öppen */
-.menu {
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Täcker hela bredden av App.jsx */
+  height: 100%; /* Täcker hela höjden av App.jsx */
+  background-color: rgba(28, 25, 25); /* Mörk bakgrund med genomskinlighet */
   display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 50px;
-  right: 20px;
-  background-color: #FAF0EB;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Bakom loggan */
 }
-
-.menu a {
+.sidebar a {
+  font-family: 'Bebas Neue', cursive;
   text-decoration: none;
-  color: #333;
+  color: #EC315A;
   padding: 10px 0;
-  font-size: 1.2em;
+  font-size: 3.2em;
   text-align: center;
+  text-decoration: none;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
 }
