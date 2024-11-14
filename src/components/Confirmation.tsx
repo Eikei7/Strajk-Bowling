@@ -50,7 +50,7 @@ const Confirmation: React.FC = () => {
   
       <div className='input-total'>     
         <p><strong>Total:</strong></p>
-        {bookingData.price} sek
+        <p>{bookingData.price} sek</p>
       </div>
       <button className="btn-strike" onClick={() => navigate('/booking')}>Sweet, let's go!</button>
     </div>
