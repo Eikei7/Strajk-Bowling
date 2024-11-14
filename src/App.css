@@ -142,7 +142,7 @@ h2 {
 .booking-details::before {
   content: "";
   display: inline-block;
-  width: 110px;
+  width: 100px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
@@ -151,7 +151,7 @@ h2 {
 .booking-details::after {
   content: "";
   display: inline-block;
-  width: 110px;
+  width: 100px;
   height: 1px;
   background-color: #7A52D1;
   vertical-align: middle;
@@ -206,8 +206,10 @@ input {
 .input-total {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   text-align: left;
+  margin-top: 40px;
   padding: 10px;
   width: 340px;
   height: 25px;
@@ -220,6 +222,8 @@ input {
 .input-field-date, .input-field-time {
   position: relative;
   text-align: left;
+  display: flex;
+  align-items: center;
   padding: 10px;
   width: 150px;
   height: 20px;
@@ -249,7 +253,6 @@ input {
   top: -8px;
   left: 10px;
   font-size: 0.5em;
-  font-weight: bold;
   background-color: #fff4f1;
   padding: 0 5px;
   color: #7A52D1;
@@ -278,8 +281,8 @@ input {
   margin-right: 60px;
   margin-left: 60px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   font-size: 2em;
   cursor: pointer;
   align-items: center;
@@ -292,7 +295,8 @@ input {
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 4px;
-  margin: 25px 0;
+  margin-bottom: 25px;
+  margin-top: -10px;
 }
 /* Stilar för hamburger-knappen */
 .hamburger {

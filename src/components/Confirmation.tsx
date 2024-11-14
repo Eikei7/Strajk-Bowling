@@ -27,28 +27,35 @@ const Confirmation: React.FC = () => {
       <img src="logo.svg" alt="Confirmation" width="70px" />
       <h1 className="header-confirmation">See you soon!</h1>
       <h2 className='booking-details'>Booking Details</h2>
+  
       <div className='input-field'>
-      <div className='input-label'>When</div>
-      <p>{bookingData.when.replace("T", ", ")}</p>
+        <div className='input-label'>When</div>
+        <p>{bookingData.when.replace("T", ", ")}</p>
       </div>
+  
       <div className='input-field'>
-      <div className='input-label'>Who</div>
-      <p> {bookingData.people}</p>
+        <div className='input-label'>Who</div>
+        <p>{`${bookingData.people} ${bookingData.people === 1 ? "person" : "people"}`}</p>
       </div>
+  
       <div className='input-field'>
-      <div className='input-label'>Lanes</div>
-      <p> {bookingData.lanes}</p>
+        <div className='input-label'>Lanes</div>
+        <p>{`${bookingData.lanes} ${bookingData.lanes === 1 ? "lane" : "lanes"}`}</p>
       </div>
+  
       <div className='input-field'>
         <div className='input-label'>Booking number</div>
-      <p>{bookingData.id}</p>
+        <p>{bookingData.id}</p>
       </div>
+  
       <div className='input-total'>     
-      <p><strong>Total:</strong> {bookingData.price} sek</p>
+        <p><strong>Total:</strong></p>
+        {bookingData.price} sek
       </div>
       <button className="btn-strike" onClick={() => navigate('/booking')}>Sweet, let's go!</button>
     </div>
   );
+  
 };
 
 export default Confirmation;
