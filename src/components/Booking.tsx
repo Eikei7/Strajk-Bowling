@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookingRequest, BookingResponse } from '../types';
+import Menu from './Menu';
 
 const Booking: React.FC = () => {
   const [bookingData, setBookingData] = useState<BookingRequest>({
@@ -70,6 +71,7 @@ const Booking: React.FC = () => {
 
   return (
     <div className='booking-container'>
+      <Menu />
       <img src="logo.svg" alt="Logo" width="70px" />
       <h1 className="header-confirmation">Booking</h1>
       <h2 className="when-what-who">WHEN, WHAT & WHO</h2>
