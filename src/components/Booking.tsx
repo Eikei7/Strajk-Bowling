@@ -51,7 +51,11 @@ const Booking: React.FC = () => {
       setErrorMessage(`Please enter ${bookingData.people} shoe sizes.`);
       return; // Avbryt om valideringen misslyckas
     }
-    
+    // Validera att det finns max 4 spelare per bana
+    if (bookingData.people > bookingData.lanes * 4) {
+      setErrorMessage(`You need at least ${Math.ceil(bookingData.people / 4)} lanes for ${bookingData.people} players.`);
+      return;
+    }
     setErrorMessage(null); // Nollställ felmeddelandet om valideringen lyckas
     const when = `${date}T${time}`;
     const updatedBookingData = { ...bookingData, when };
