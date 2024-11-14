@@ -359,3 +359,9 @@ input {
   list-style-type: none;
   padding: 0;
 }
+.error-message {
+  color: #EC315A;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
