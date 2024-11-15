@@ -11,26 +11,30 @@ const Menu: React.FC = () => {
 
   return (
     <>
-      {/* Logo som öppnar sidomenyn */}
+      {/* Hamburger-knappen alltid synlig */}
       <button className="hamburger" onClick={toggleMenu}>
-      <span className="line"></span>
-      <span className="line"></span>
-      <span className="line"></span>
+        <span className="line"></span>
+        <span className="line"></span>
+        <span className="line"></span>
       </button>
 
-      {/* Sidomenyn, animerad med Framer Motion */}
-      <motion.div 
+      {/* Sidomenyn */}
+      <motion.div
         className="sidebar"
-        initial={{ x: '-100%', opacity: 0 }} // Startläge: utanför skärmen och osynlig
-        animate={{ x: isOpen ? 0 : '-100%', opacity: isOpen ? 1 : 0 }} // När öppen: x = 0 och tonas in
-        transition={{ duration: 0.7, ease: "easeInOut" }} // Använder ease-in-out för mjukare rörelse
+        initial={{ x: '-100%', opacity: 0 }}
+        animate={{ x: isOpen ? 0 : '-100%', opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.7, ease: 'easeInOut' }}
       >
         <ul>
           <li>
-            <Link to="/booking" onClick={toggleMenu}>Booking</Link>
+            <Link to="/booking" onClick={toggleMenu}>
+              Booking
+            </Link>
           </li>
           <li>
-            <Link to="/confirmation" onClick={toggleMenu}>Confirmation</Link>
+            <Link to="/confirmation" onClick={toggleMenu}>
+              Confirmation
+            </Link>
           </li>
         </ul>
       </motion.div>
