@@ -102,7 +102,6 @@ const Booking: React.FC = () => {
             required
           />
         </div>
-
         <div className='input-field-time'>
           <span className="input-label">Time</span>
           <input
@@ -113,7 +112,6 @@ const Booking: React.FC = () => {
             required
           />
         </div>
-
         <div className='input-field'>
           <span className="input-label">Number of Awesome bowlers</span>
           <input
@@ -127,7 +125,6 @@ const Booking: React.FC = () => {
           />
           <span className="input-unit">{bookingData.people > 1 ? "people" : "person"}</span>
         </div>
-
         <div className="input-field">
           <span className="input-label">Number of Lanes</span>
           <input
@@ -141,7 +138,6 @@ const Booking: React.FC = () => {
           />
           <span className="input-unit">{bookingData.lanes > 1 ? "lanes" : "lane"}</span>
         </div>
-
         <h2 className="shoes">Shoes</h2>
         {bookingData.shoes.map((size, index) => (
           <div className='shoe-container' key={index}>
@@ -166,7 +162,6 @@ const Booking: React.FC = () => {
             </div>
           </div>
         ))}
-        
         <div>
           <button className="btn-plus" type="button" onClick={addShoeSizeField} aria-label="Add shoe size">+</button>
         </div>
