@@ -1,4 +1,3 @@
-// src/components/Confirmation.tsx
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BookingResponse } from '../types';
@@ -6,7 +5,7 @@ import Menu from './Menu';
 
 const Confirmation: React.FC = () => {
   const location = useLocation();
-  const bookingData = location.state as BookingResponse | null; // Typdefiniera för att vara säker på datatypen
+  const bookingData = location.state as BookingResponse | null;
   const navigate = useNavigate();
 
   if (!bookingData) {
