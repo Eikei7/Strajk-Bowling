@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
 
   return (
     <>
-      {/* Hamburger-knappen alltid synlig */}
+      {/* Hamburger-knappen */}
       <button className="hamburger" onClick={toggleMenu}>
         <span className="line"></span>
         <span className="line"></span>
@@ -20,7 +20,7 @@ const Menu: React.FC = () => {
 
       {/* Sidomenyn */}
       <motion.div
-        className="sidebar"
+        className={`sidebar ${isOpen ? '' : 'sidebar-hidden'}`}
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: isOpen ? 0 : '-100%', opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.7, ease: 'easeInOut' }}

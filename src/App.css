@@ -320,6 +320,10 @@ input {
   justify-content: center;
   z-index: 1000;
 }
+.sidebar-hidden {
+  pointer-events: none; /* Förhindrar interaktion med innehåll */
+  opacity: 0; /* Visuellt döljer innehållet ytterligare, om det behövs */
+}
 .sidebar a {
   font-family: 'Bebas Neue', cursive;
   text-decoration: none;
