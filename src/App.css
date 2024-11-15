@@ -161,8 +161,7 @@ input {
 .input-no {
   width: 40px;
 }
-
-.input-field {
+.input-field, .input-total, .input-field-shoes {
   display: flex;
   align-items: center;
   position: relative;
@@ -170,26 +169,18 @@ input {
   padding: 10px;
   width: 340px;
   height: 25px;
-  border: 1px solid #7A52D1;
-  border-radius: 5px;
-  font-family: 'Work Sans', sans-serif;
   font-size: 1.3em;
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 5px;
+}
+.input-field {
+  border: 1px solid #7A52D1;
   color: #3B3B3B;
 }
 .input-total {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: relative;
-  text-align: left;
   margin-top: 40px;
-  padding: 10px;
-  width: 340px;
-  height: 25px;
   border: 1px solid #EC315A;
-  border-radius: 5px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.3em;
   color: #EC315A;
 }
 .input-field-date, .input-field-time {
@@ -206,21 +197,13 @@ input {
   color: #3B3B3B;
 }
 .input-field-shoes {
-  display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: left;
   position: relative;
-  text-align: left;
-  padding: 10px;
   width: 100%;
-  height: 30px;
   border: 1px solid #7A52D1;
-  border-radius: 5px;
-  font-size: 1.2em;
-  color: #3B3B3B;
+  color: #222;
 }
-
 .input-label {
   position: absolute;
   top: -8px;
@@ -231,35 +214,26 @@ input {
   color: #7A52D1;
   text-transform: uppercase;
 }
-
-.btn-minus {
+.btn-minus, .btn-plus {
   background-color: #EC315A;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
   font-size: 2em;
   cursor: pointer;
-  margin: 0 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.btn-minus {
+  width: 40px;
+  height: 40px;
+  margin: 0 40px;
+}
 .btn-plus {
-  display: block;
-  background-color: #EC315A;
-  color: white;
-  border: none;
-  margin-right: 60px;
-  margin-left: 60px;
-  border-radius: 50%;
   width: 60px;
   height: 60px;
-  font-size: 2em;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
+  margin: 0 60px;
 }
 .btn-strike {
   width: 350px;
@@ -289,25 +263,20 @@ input {
   margin: 10px;
   z-index: 1100;
 }
-
 .hamburger .line {
   height: 2px;
   background-color: #EC315A;
   border-radius: 5px;
 }
-
 .hamburger .line:nth-child(1) {
   width: 100%; /* Längsta linjen */
 }
-
 .hamburger .line:nth-child(2) {
   width: 75%; /* Lite kortare än den första */
 }
-
 .hamburger .line:nth-child(3) {
   width: 50%; /* Kortast */
 }
-
 .sidebar {
   position: absolute;
   top: 0;
