@@ -12,7 +12,7 @@ Ensures the number of players aligns with the number of lanes (maximum of 4 play
 Validates that each player has an associated shoe size.
 * **Booking Confirmation:** After submitting the booking request, users receive a confirmation with the total price and booking ID.
 
-## Requirements
+## Technologies
 * **React** with TypeScript for component-based UI development.
 * **React Router** for handling page navigation.
 * **Fetch API** for making HTTP requests to a backend API.
